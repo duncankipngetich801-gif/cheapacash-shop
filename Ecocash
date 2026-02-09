@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cheapacash Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0b3d91;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+    }
+    .price {
+      font-size: 20px;
+      color: green;
+      margin-bottom: 10px;
+    }
+    button {
+      background: #0b3d91;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: #062b66;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #ddd;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Cheapacash Data Shop</h1>
+  <p>Fast • Secure • Reliable</p>
+</header>
+
+<div class="container">
+  <h2>Data Packages</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>5GB Data</h3>
+      <div class="price">$6</div>
+      <button onclick="buy('5GB Data',6)">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>8GB Data</h3>
+      <div class="price">$9</div>
+      <button onclick="buy('8GB Data',9)">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>10GB Data</h3>
+      <div class="price">$10</div>
+      <button onclick="buy('10GB Data',10)">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>25GB + 250 Min</h3>
+      <div class="price">$24</div>
+      <button onclick="buy('25GB + 250 Min',24)">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>Unlimited Data</h3>
+      <div class="price">$45</div>
+      <button onclick="buy('Unlimited Data',45)">Buy</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Pay with EcoCash or PayPal</p>
+</footer>
+
+<script>
+function buy(item, price) {
+  let method = prompt(
+    "Buying: " + item + " ($" + price + ")\n\nChoose payment:\n1 - EcoCash\n2 - PayPal"
+  );
+
+  if (method == "1") {
+    alert(
+      "EcoCash Payment\n\nSend $" + price +
+      " to:\nEcoCash Number: 07XXXXXXXX\nName: Cheapacash\n\nAfter payment contact us on WhatsApp."
+    );
+  }
+
+  if (method == "2") {
+    window.location.href =
+      "https://www.paypal.com/paypalme/YOURUSERNAME/" + price;
+  }
+}
+</script>
+
+</body>
+</html>
